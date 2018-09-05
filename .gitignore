@@ -1,0 +1,3 @@
+/.tmux.d/
+/.emacs.d/
+/bin/emacsclient
