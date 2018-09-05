@@ -1,0 +1,9 @@
+#!/bin/sh
+ME=`whoami`
+`ps -f -u ${ME} | grep '.*Emacs.app.*--bg-daemon.*' | grep -v grep > /dev/null`
+if [[ $? -ne 0 ]]; then
+    # no emacs daemon, start one
+    emacs --daemon
+fi
+# start a window
+emacsclient -c -n $@
